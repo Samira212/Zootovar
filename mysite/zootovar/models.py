@@ -3,8 +3,8 @@ from django.db import models
 
 class Cat(models.Model):
     name = models.CharField(max_length=50, unique=True, verbose_name='Имя')
-    breed = models.CharField(max_length=50, unique=True,verbose_name='Порода')
-    age = models.IntegerField(verbose_name='Возраст')
+    breed = models.CharField(max_length=50, unique=True, verbose_name='Порода')
+    age = models.IntegerField(default=0, verbose_name='Возраст')
     color = models.CharField(max_length=32, unique=True, verbose_name='Цвет')
     photo = models.ImageField(upload_to='img/', blank=True, null=True, verbose_name='Фото')
     POL_CHOICES = (
@@ -12,7 +12,7 @@ class Cat(models.Model):
         ('Мальчик', 'Мальчик'),
     )
 
-    pol = models.CharField(max_length=16, choices=POL_CHOICES, verbose_name='Пол'),
+    pol = models.CharField(max_length=50, choices=POL_CHOICES, verbose_name='Пол'),
 
     description = models.TextField(verbose_name='Описания')
 

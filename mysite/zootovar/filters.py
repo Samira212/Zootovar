@@ -7,5 +7,5 @@ class CatFilter(FilterSet):
         model = Cat
         fields = {
             'name': ['exact'],
-            'year': ['gt', 'lt'],
+            'age': ['gt', 'lt'],
         }
